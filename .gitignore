@@ -157,3 +157,7 @@ stamp-h[1-9]
 /libfcache
 /libfdata
 /libuna
+*.ipch
+.vs
+Release
+VSDebug

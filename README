@@ -1,3 +1,58 @@
+LTRData fork of libqcow
+======================
+
+This is LTRData's fork of libyal/libqcow, a native C library for reading
+QEMU Copy-On-Write (QCOW) disk images:
+https://github.com/libyal/libqcow
+
+Fork scope and status
+---------------------
+
+The main branch contains upstream version 20220429 (April 2022), followed
+by LTRData's May 2022 msvcrt.dll compatibility changes. Those changes add
+or update Visual C++ projects and property sheets for Windows runtime
+compatibility; they do not add QCOW write support.
+
+The library remains read-only. The format-support list and alpha status
+below are retained from the upstream README for this snapshot. Its
+"work in progress" wording is historical upstream context, not a promise
+of ongoing development in this fork. Consult libyal/libqcow for current
+upstream development and documentation.
+
+Source layout
+--------------
+
+* libqcow and include: native library implementation and public C API.
+* qcowtools: qcowinfo for image information and qcowmount for mounting
+  image data.
+* pyqcow: Python bindings.
+* documentation and manuals: format documentation and API/tool manuals.
+* msvscpp: Visual C++ solution and projects.
+
+The retained libqcow.nuspec describes native headers and Win32/x64
+libraries under the upstream package name libqcow. It is not a managed
+.NET wrapper.
+
+Building
+--------
+
+The repository includes dependency-synchronization scripts, Autotools
+configuration and Windows build scripts. Start with the upstream build
+documentation linked below, taking this snapshot and its local project
+settings into account.
+
+The Visual C++ configurations use different toolsets. Some import the
+LTRData compatibility property sheets, which contain machine-specific
+WDK 7 paths and legacy msvcrt runtime objects. Inspect the selected
+configuration and adapt those paths for your environment. These settings
+do not establish support for every Windows version.
+
+Attribution and license texts are in AUTHORS, COPYING and COPYING.LESSER.
+See individual source headers for the terms applicable to each component.
+
+Original upstream README for this snapshot
+==========================================
+
 libqcow is a library to access the QEMU Copy-On-Write (QCOW) image format.
 
 Project information:
